@@ -10,7 +10,7 @@ async function slackMessage(message, channel) {
     console.log(`Sending slack message: ${message}`);
     await web.chat.postMessage({
         channel: channel,
-        icon_url: "https://totalminer.ga/5jYp.png",
+        icon_url: "https://totalminer.ga/OkGE.jpg",
         as_user: false,
         username: "hydraz ebooks",
         text: message
