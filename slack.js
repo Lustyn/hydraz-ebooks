@@ -6,7 +6,10 @@ const token = process.env.SLACK_TOKEN;
 const web = new WebClient(token);
 const rtm = new RTMClient(token);
 
+const censor = /<@(U[A-Z0-9]+)>/g;
+
 async function slackMessage(message, channel) {
+    message = message.replace(censor, "[redacted user]");
     console.log(`Sending slack message: ${message}`);
     await web.chat.postMessage({
         channel: channel,

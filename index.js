@@ -4,7 +4,7 @@ let chain;
 
 (async () => {
     chain = await require("./chain");
-    slackMessage(chain.generate(50), "C3KUJEY7M");
+    slackMessage("justyn the bot is online you fucking retard", "C3KUJEY7M");
 
     rtm.on('message', async (message) => {
         if (message.subtype && message.subtype === 'bot_message') {
@@ -15,7 +15,7 @@ let chain;
     
         console.log(`(channel:${message.channel}) ${message.user}: ${message.text}`);
     
-        if (message.text.includes("category"))
+        if (message.text.toLowerCase().includes("category"))
             await slackMessage(chain.generate(100), message.channel);
     });
     
